@@ -163,628 +163,629 @@ instance.prototype.init_presets = function () {
 	var self = this;
 	var presets = [];
 
-// This is the Take command
+	// This is the Take command
 
-		presets.push({
-			category: 'Program',
-			label: 'Take',
-			bank: {
-				style: 'text',
-				text: 'Take',
-				size: '18',
-				color: '16777215',
-				bgcolor: self.rgb(0,255,0)
-			},
-			actions: [
-				{
-					action: 'take',
+	presets.push({
+		category: 'Program',
+		label: 'Take',
+		bank: {
+			style: 'text',
+			text: 'Take',
+			size: '18',
+			color: '16777215',
+			bgcolor: self.rgb(0,255,0)
+		},
+		actions: [
+			{
+				action: 'take',
+			}
+		]
+	});
+
+	// These are the physical inputs as per each layer
+	// BACKGROUND LIVE
+
+	presets.push({
+		category: 'Inputs',
+		label: 'No Input',
+		bank: {
+			style: 'text',
+			text: 'Black\\nLOGO',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 0
 				}
-			]
-		});
+			}
+		]
+	});
 
-// These are the physical inputs as per each layer
-// BACKGROUND LIVE
-		presets.push({
-			category: 'Inputs',
-			label: 'No Input',
-			bank: {
-				style: 'text',
-				text: 'Black\\nLOGO',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 0
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'Input 1',
+		bank: {
+			style: 'text',
+			text: 'In 1',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 1
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 1',
-			bank: {
-				style: 'text',
-				text: 'In 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 1
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'Input 2',
+		bank: {
+			style: 'text',
+			text: 'In 2',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 2
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 2',
-			bank: {
-				style: 'text',
-				text: 'In 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 2
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'Input 3',
+		bank: {
+			style: 'text',
+			text: 'In 3',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 3
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 3',
-			bank: {
-				style: 'text',
-				text: 'In 3',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 3
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'Input 4',
+		bank: {
+			style: 'text',
+			text: 'In 4',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 4
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 4',
-			bank: {
-				style: 'text',
-				text: 'In 4',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 4
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'Input 5',
+		bank: {
+			style: 'text',
+			text: 'In 5',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 5
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 5',
-			bank: {
-				style: 'text',
-				text: 'In 5',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 5
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'Input 6',
+		bank: {
+			style: 'text',
+			text: 'In 6',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 6
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'Input 6',
-			bank: {
-				style: 'text',
-				text: 'In 6',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 6
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'DVI 1',
+		bank: {
+			style: 'text',
+			text: 'DVI 1',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 9
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'DVI 1',
-			bank: {
-				style: 'text',
-				text: 'DVI 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 9
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'DVI 2',
+		bank: {
+			style: 'text',
+			text: 'DVI 2',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 10
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'DVI 2',
-			bank: {
-				style: 'text',
-				text: 'DVI 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 10
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'SDI 1',
+		bank: {
+			style: 'text',
+			text: 'SDI 1',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 11
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'SDI 1',
-			bank: {
-				style: 'text',
-				text: 'SDI 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 11
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'SDI 2',
+		bank: {
+			style: 'text',
+			text: 'SDI 2',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 12
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'SDI 2',
-			bank: {
-				style: 'text',
-				text: 'SDI 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 12
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'SDI 3',
+		bank: {
+			style: 'text',
+			text: 'SDI 3',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 13
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Inputs',
-			label: 'SDI 3',
-			bank: {
-				style: 'text',
-				text: 'SDI 3',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 13
-					}
+	presets.push({
+		category: 'Inputs',
+		label: 'SDI 4',
+		bank: {
+			style: 'text',
+			text: 'SDI 4',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(0,153,204)
+		},
+		actions: [
+			{
+				action: 'in',
+				options: {
+					input: 14
 				}
-			]
-		});
-
-		presets.push({
-			category: 'Inputs',
-			label: 'SDI 4',
-			bank: {
-				style: 'text',
-				text: 'SDI 4',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(0,153,204)
-			},
-			actions: [
-				{
-					action: 'in',
-					options: {
-						input: 14
-					}
+			}
+		]
+	});
+	// These are the frame stores
+	presets.push({
+		category: 'Frames',
+		label: 'No Frame',
+		bank: {
+			style: 'text',
+			text: 'No\\nFrame',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 0
 				}
-			]
-		});
-// These are the frame stores
-		presets.push({
-			category: 'Frames',
-			label: 'No Frame',
-			bank: {
-				style: 'text',
-				text: 'No\\nFrame',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 0
-					}
+			}
+		]
+	});
+
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 1',
+		bank: {
+			style: 'text',
+			text: 'Fr 1',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 1
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 1',
-			bank: {
-				style: 'text',
-				text: 'Fr 1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 1
-					}
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 2',
+		bank: {
+			style: 'text',
+			text: 'Fr 2',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 2
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 2',
-			bank: {
-				style: 'text',
-				text: 'Fr 2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 2
-					}
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 3',
+		bank: {
+			style: 'text',
+			text: 'Fr 3',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 3
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 3',
-			bank: {
-				style: 'text',
-				text: 'Fr 3',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 3
-					}
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 4',
+		bank: {
+			style: 'text',
+			text: 'Fr 4',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 4
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 4',
-			bank: {
-				style: 'text',
-				text: 'Fr 4',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 4
-					}
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 5',
+		bank: {
+			style: 'text',
+			text: 'Fr 5',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 5
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 5',
-			bank: {
-				style: 'text',
-				text: 'Fr 5',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 5
-					}
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 6',
+		bank: {
+			style: 'text',
+			text: 'Fr 6',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 6
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 6',
-			bank: {
-				style: 'text',
-				text: 'Fr 6',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 6
-					}
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 7',
+		bank: {
+			style: 'text',
+			text: 'Fr 7',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 7
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 7',
-			bank: {
-				style: 'text',
-				text: 'Fr 7',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 7
-					}
+	presets.push({
+		category: 'Frames',
+		label: 'Frame 8',
+		bank: {
+			style: 'text',
+			text: 'Fr 8',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(88,88,58)
+		},
+		actions: [
+			{
+				action: 'fr',
+				options: {
+					frame: 8
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Frames',
-			label: 'Frame 8',
-			bank: {
-				style: 'text',
-				text: 'Fr 8',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(88,88,58)
-			},
-			actions: [
-				{
-					action: 'fr',
-					options: {
-						frame: 8
-					}
+	// These are the presets of the Eikos
+
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 1',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n1',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 3
 				}
-			]
-		});
+			}
+		]
+	});
 
-// These are the presets of the Eikos
-
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 1',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n1',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
-			},
-			actions: [
-				{
-					action: 'ps',
-					options: {
-						preset: 3
-					}
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 2',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n2',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 4
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 2',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n2',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
-			},
-			actions: [
-				{
-					action: 'ps',
-					options: {
-						preset: 4
-					}
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 3',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n3',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 5
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 3',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n3',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
-			},
-			actions: [
-				{
-					action: 'ps',
-					options: {
-						preset: 5
-					}
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 4',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n4',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 6
 				}
-			]
-		});
+			}
+		]
+	});
 
-		presets.push({
-			category: 'Presets',
-			label: 'Preset 4',
-			bank: {
-				style: 'text',
-				text: 'Preset\\n4',
-				size: '14',
-				color: '16777215',
-				bgcolor: self.rgb(153,153,102)
-			},
-			actions: [
-				{
-					action: 'ps',
-					options: {
-						preset: 6
-					}
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 5',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n5',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 3
 				}
-			]
-		});
+			}
+		]
+	});
 
-				presets.push({
-					category: 'Presets',
-					label: 'Preset 5',
-					bank: {
-						style: 'text',
-						text: 'Preset\\n5',
-						size: '14',
-						color: '16777215',
-						bgcolor: self.rgb(153,153,102)
-					},
-					actions: [
-						{
-							action: 'ps',
-							options: {
-								preset: 3
-							}
-						}
-					]
-				});
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 6',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n6',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 4
+				}
+			}
+		]
+	});
 
-				presets.push({
-					category: 'Presets',
-					label: 'Preset 6',
-					bank: {
-						style: 'text',
-						text: 'Preset\\n6',
-						size: '14',
-						color: '16777215',
-						bgcolor: self.rgb(153,153,102)
-					},
-					actions: [
-						{
-							action: 'ps',
-							options: {
-								preset: 4
-							}
-						}
-					]
-				});
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 7',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n7',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 5
+				}
+			}
+		]
+	});
 
-				presets.push({
-					category: 'Presets',
-					label: 'Preset 7',
-					bank: {
-						style: 'text',
-						text: 'Preset\\n7',
-						size: '14',
-						color: '16777215',
-						bgcolor: self.rgb(153,153,102)
-					},
-					actions: [
-						{
-							action: 'ps',
-							options: {
-								preset: 5
-							}
-						}
-					]
-				});
-
-				presets.push({
-					category: 'Presets',
-					label: 'Preset 8',
-					bank: {
-						style: 'text',
-						text: 'Preset\\n8',
-						size: '14',
-						color: '16777215',
-						bgcolor: self.rgb(153,153,102)
-					},
-					actions: [
-						{
-							action: 'ps',
-							options: {
-								preset: 6
-							}
-						}
-					]
-				});
+	presets.push({
+		category: 'Presets',
+		label: 'Preset 8',
+		bank: {
+			style: 'text',
+			text: 'Preset\\n8',
+			size: '14',
+			color: '16777215',
+			bgcolor: self.rgb(153,153,102)
+		},
+		actions: [
+			{
+				action: 'ps',
+				options: {
+					preset: 6
+				}
+			}
+		]
+	});
 	self.setPresetDefinitions(presets);
 }
 
@@ -873,7 +874,7 @@ instance.prototype.actions = function(system) {
 			}]
 		},
 
-		'Background Frame':      {
+		'Background Frame': {
 			label: 'Background Frame',
 			options: [{
 				type:   'dropdown',
@@ -894,7 +895,7 @@ instance.prototype.actions = function(system) {
 			}]
 		},
 
-		'LOGO 1':      {
+		'LOGO 1': {
 			label: 'LOGO 1',
 			options: [{
 				type:   'dropdown',
@@ -915,7 +916,7 @@ instance.prototype.actions = function(system) {
 			}]
 		},
 
-		'LOGO 2':      {
+		'LOGO 2': {
 			label: 'LOGO 2',
 			options: [{
 				type:   'dropdown',
@@ -937,7 +938,7 @@ instance.prototype.actions = function(system) {
 		},
 
 
-		'ps':      {
+		'ps': {
 			label: 'User Preset',
 			options: [{
 				type:   'dropdown',
@@ -975,16 +976,16 @@ instance.prototype.action = function(action) {
 			break;
 
 		case 'PIP 2':
-		  cmd = '1,3,' + opt.input + 'IN' + '\r\n' + '1,3,' + opt.input + 'IN' ;
-		  break;
+			cmd = '1,3,' + opt.input + 'IN' + '\r\n' + '1,3,' + opt.input + 'IN' ;
+			break;
 
 		case 'PIP 3':
-		  cmd = '1,4,' + opt.input + 'IN' + '\r\n' + '1,4,' + opt.input + 'IN' ;
-		  break;
+			cmd = '1,4,' + opt.input + 'IN' + '\r\n' + '1,4,' + opt.input + 'IN' ;
+			break;
 
 		case 'Background Frame':
-		  cmd = '1,0,' + opt.frame + 'IN' + '\r\n' + '1,0,' + opt.frame + 'IN';
-		  break;
+			cmd = '1,0,' + opt.frame + 'IN' + '\r\n' + '1,0,' + opt.frame + 'IN';
+			break;
 
 		case 'LOGO 1':
 			cmd = '1,6,' + opt.frame + 'IN' + '\r\n' + '1,6,' + opt.frame + 'IN';
@@ -998,27 +999,21 @@ instance.prototype.action = function(action) {
 			cmd = '' + opt.preset + 'Nf \r\n 1Nt1Nc' + '\r\n' + '' + opt.preset + 'Nf \r\n 1Nt1Nc';
 			break;
 
-
 	}
+
 	if (self.config.prot == 'tcp') {
 		if (cmd !== undefined) {
-
-			debug('sending ',cmd,"to",self.config.host);
-
 			if (self.socket !== undefined && self.socket.connected) {
 				self.socket.send(cmd);
 			} else {
 				debug('Socket not connected :(');
 			}
 		}
-	};
+	}
+
 	if (self.config.prot == 'udp') {
-
 		if (cmd !== undefined ) {
-
 			if (self.udp !== undefined ) {
-				debug('sending',cmd,"to",self.config.host);
-
 				self.udp.send(cmd);
 			}
 		}
