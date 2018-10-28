@@ -1,6 +1,6 @@
 {
   "name": "analogway-eks500",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "api_version": "1.0.0",
   "keywords": [
     "Image Processing"
@@ -13,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Adrian Davis (themusicnerd@gmail.com)",
+  "author": "Adrian Davis <themusicnerd@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
