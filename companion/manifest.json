@@ -1,0 +1,23 @@
+{
+	"$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
+	"type": "connection",
+	"id": "analogway-eks500",
+	"name": "Analog Way Eikos EKS500",
+	"shortname": "Eikos EKS500",
+	"description": "Control and monitor an Analog Way Eikos EKS500 video switcher",
+	"version": "2.0.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-module-analogway-eks500.git",
+	"bugs": "https://github.com/bitfocus/companion-module-analogway-eks500/issues",
+	"maintainers": [{ "name": "Adrian Davis", "email": "themusicnerd@gmail.com" }],
+	"runtime": {
+		"type": "node22",
+		"api": "nodejs-ipc",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../dist/main.js"
+	},
+	"legacyIds": [],
+	"manufacturer": "Analog Way",
+	"products": ["Eikos", "EKS500"],
+	"keywords": ["video", "switcher", "presentation", "matrix", "scaler"]
+}

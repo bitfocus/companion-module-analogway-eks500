@@ -1,1 +1,7 @@
 node_modules/
+dist/
+pkg/
+*.tgz
+.yarn/cache/
+.yarn/install-state.gz
+.DS_Store
