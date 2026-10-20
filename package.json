@@ -1,6 +1,6 @@
 {
 	"name": "analogway-eks500",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Companion module for the Analog Way Eikos EKS500",
 	"main": "dist/main.js",
 	"type": "module",

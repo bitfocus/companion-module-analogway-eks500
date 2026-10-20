@@ -216,3 +216,15 @@ export const inputNumberToIndex = (source: number): number => source - 1
 
 export const sourceLabel = (source: number): string =>
 	String(SOURCE_CHOICES.find((choice) => Number(choice.id) === source)?.label ?? `Source ${source}`)
+
+/** Layers whose IN value is a frame number (background frame for outputs 1 and 2) */
+export const FRAME_LAYERS = [0, 1]
+/** Layers whose IN value is a logo number */
+export const LOGO_LAYERS = [6, 7]
+
+/** Label a layer's IN value according to what that layer holds: a frame, a logo, or an input */
+export const layerSourceLabel = (layer: number, source: number): string => {
+	if (FRAME_LAYERS.includes(layer)) return source === 0 ? 'No frame' : `Frame ${source}`
+	if (LOGO_LAYERS.includes(layer)) return source === 0 ? 'No logo' : `Logo ${source}`
+	return sourceLabel(source)
+}

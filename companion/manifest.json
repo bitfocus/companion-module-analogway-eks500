@@ -5,7 +5,7 @@
 	"name": "Analog Way Eikos EKS500",
 	"shortname": "Eikos EKS500",
 	"description": "Control and monitor an Analog Way Eikos EKS500 video switcher",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-analogway-eks500.git",
 	"bugs": "https://github.com/bitfocus/companion-module-analogway-eks500/issues",

@@ -1,5 +1,5 @@
 import type ModuleInstance from './main.js'
-import { LAYER_CHOICES, SOURCE_CHOICES, sourceLabel } from './choices.js'
+import { LAYER_CHOICES, SOURCE_CHOICES, layerSourceLabel } from './choices.js'
 import { stateKey } from './protocol.js'
 
 export type VariablesSchema = Record<string, string | number>
@@ -48,8 +48,9 @@ export function UpdateVariableValues(self: ModuleInstance): void {
 
 	for (const preset of [0, 1]) {
 		for (const layer of LAYER_CHOICES) {
-			const source = Number(self.state.get(stateKey('IN', [preset, Number(layer.id)])) ?? 0)
-			values[`source_${preset}_${layer.id}`] = sourceLabel(source)
+			const source = self.state.get(stateKey('IN', [preset, Number(layer.id)]))
+			values[`source_${preset}_${layer.id}`] =
+				source === undefined ? 'Unknown' : layerSourceLabel(Number(layer.id), Number(source))
 		}
 	}
 	for (const input of SOURCE_CHOICES.filter((choice) => Number(choice.id) > 0)) {

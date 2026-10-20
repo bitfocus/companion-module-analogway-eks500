@@ -36,7 +36,7 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	private udp?: UDPHelper
 	private receiveBuffer = ''
 	private pollTimer?: NodeJS.Timeout
-	private pollRunning = false
+	private pollPromise?: Promise<void>
 
 	async init(config: ModuleConfig): Promise<void> {
 		this.config = this.normalizeConfig(config)
@@ -56,9 +56,12 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	async configUpdated(config: ModuleConfig): Promise<void> {
 		this.config = this.normalizeConfig(config)
 		this.state.clear()
+		this.lastResponse = ''
 		this.lastError = ''
 		this.stopPolling()
 		this.closeConnection()
+		UpdateVariableValues(this)
+		this.checkAllFeedbacks()
 		this.connect()
 	}
 
@@ -135,22 +138,32 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	}
 
 	async pollStatus(force = false): Promise<void> {
-		if (this.pollRunning && !force) return
-		this.pollRunning = true
-		try {
-			const commands = ['?', '*', 'CM', 'TA', 'PF', 'PZ']
-			for (const preset of [0, 1]) {
-				for (const layer of MONITORED_LAYERS) commands.push(buildReadCommand('IN', [preset, layer]))
-			}
-			for (const input of INPUT_INDEXES) {
-				commands.push(buildReadCommand('sF', [input]), buildReadCommand('Sf', [input]))
-			}
-			for (const output of [0, 1, 2]) commands.push(buildReadCommand('OB', [output]))
-			for (const output of [0, 1]) commands.push(buildReadCommand('Au', [output]))
-			await this.sendCommands(commands)
-		} finally {
-			this.pollRunning = false
+		if (this.pollPromise !== undefined) {
+			// A scheduled poll never overlaps a running one; a forced poll waits for it, then runs a fresh one
+			if (!force) return this.pollPromise
+			await this.pollPromise.catch(() => undefined)
+			// Another caller may have started a poll while we waited
+			if (this.pollPromise !== undefined) return this.pollPromise
 		}
+
+		const poll = this.runPoll().finally(() => {
+			if (this.pollPromise === poll) delete this.pollPromise
+		})
+		this.pollPromise = poll
+		return poll
+	}
+
+	private async runPoll(): Promise<void> {
+		const commands = ['?', '*', 'CM', 'TA', 'PF', 'PZ']
+		for (const preset of [0, 1]) {
+			for (const layer of MONITORED_LAYERS) commands.push(buildReadCommand('IN', [preset, layer]))
+		}
+		for (const input of INPUT_INDEXES) {
+			commands.push(buildReadCommand('sF', [input]), buildReadCommand('Sf', [input]))
+		}
+		for (const output of [0, 1, 2]) commands.push(buildReadCommand('OB', [output]))
+		for (const output of [0, 1]) commands.push(buildReadCommand('Au', [output]))
+		await this.sendCommands(commands)
 	}
 
 	private normalizeConfig(config: ModuleConfig): ModuleConfig {
@@ -233,18 +246,7 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 		}
 		if (changed) {
 			UpdateVariableValues(this)
-			this.checkFeedbacks(
-				'source_tally',
-				'input_signal',
-				'input_frozen',
-				'output_black',
-				'audio_mute',
-				'operating_mode',
-				'take_available',
-				'frame_stored',
-				'logo_stored',
-				'parameter_equals',
-			)
+			this.checkAllFeedbacks()
 		}
 	}
 
