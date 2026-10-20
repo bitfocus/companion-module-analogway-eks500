@@ -138,12 +138,12 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	}
 
 	async pollStatus(force = false): Promise<void> {
-		if (this.pollPromise) {
+		if (this.pollPromise !== undefined) {
 			// A scheduled poll never overlaps a running one; a forced poll waits for it, then runs a fresh one
 			if (!force) return this.pollPromise
 			await this.pollPromise.catch(() => undefined)
 			// Another caller may have started a poll while we waited
-			if (this.pollPromise) return this.pollPromise
+			if (this.pollPromise !== undefined) return this.pollPromise
 		}
 
 		const poll = this.runPoll().finally(() => {
