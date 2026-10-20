@@ -1,3 +1,2 @@
-dist
-pkg
-yarn.lock
+package.json
+/LICENSE.md
